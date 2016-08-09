@@ -3,27 +3,25 @@
  */
 
 var http = require('http');
-var fs = require('fs');
+var connect = require('connect');
 
-//404 response
-function send404Response(response) {
-    response.writeHead(404, {"Content-Type": "text/plain"});
-    response.write("Eroor 404: Page not found!");
-    response.end();
+var app = connect();
+
+
+function profile(request, response) {
+    console.log('User requested profile');
 }
 
-// Handle a user request
-function onRequest(request, response){
-    if(request.method == 'GET' && request.url == '/'){
-        response.writeHead(200, {"Content-Type": "text/html"});
-        fs.createReadStream("./index.html").pipe(response);
-    }else{
-        send404Response(response);
-    }
+function forum(request, response) {
+    console.log('User requeste  d forum');
 }
 
-http.createServer(onRequest).listen(8888);
-console.log("Server is now running...");
+app.use('/profile', profile);
+app.use('/forum', forum);
 
+
+
+http.createServer(app).listen(8888);
+console.log("Server is running...")
 
 
