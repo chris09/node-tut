@@ -1,23 +1,16 @@
 /**
  * Created by chris on 2016/8/9.
  */
+// Everything is Reference in Node.js
+var Bucky = {
+    favFood: 'bacon',
+    favMovie: 'Chappie'
+};
 
-function placeAnOrder (orderNumber) {
-    console.log('Customer order:', orderNumber);
+var Person = Bucky;
+Person.favFood = 'salad';
+console.log(Bucky.favFood);
 
-    cookAndDeliverFood(function () {
-        console.log("Delivered food order:", orderNumber);
-    });
-}
-
-function cookAndDeliverFood(callback) {
-    setTimeout(callback, 5000);
-}
-
-// Simulate users web request
-placeAnOrder(1);
-placeAnOrder(2);
-placeAnOrder(3);
-placeAnOrder(4);
-placeAnOrder(5);
-placeAnOrder(6);
+// two equal sign vs. three equal sign
+console.log(19 == '19');
+console.log(19 === '19');
