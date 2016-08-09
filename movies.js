@@ -1,14 +1,13 @@
 /**
  * Created by chris on 2016/8/9.
  */
-function printAvatar() {
-    console.log("Avatar: PG-13");
-}
+module.exports = {
+    printAvatar: function () {
+        console.log("Avatar: PG-13")
+    },
+    printChappie: function () {
+        console.log("Chappie: R");
+    },
 
-function printChappie() {
-    console.log("Chappie: R");
-}
-
-module.exports.avatar = printAvatar;
-module.exports.chappie = printChappie;
-
+    favMoive: "The Matrix",
+};
