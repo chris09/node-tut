@@ -1,16 +1,20 @@
 /**
  * Created by chris on 2016/8/9.
  */
-// Everything is Reference in Node.js
+
 var Bucky = {
-    favFood: 'bacon',
-    favMovie: 'Chappie'
+    printFirstName: function () {
+        console.log("My name is Chris");
+        console.log(this === Bucky);
+    }
 };
 
-var Person = Bucky;
-Person.favFood = 'salad';
-console.log(Bucky.favFood);
+Bucky.printFirstName();
 
-// two equal sign vs. three equal sign
-console.log(19 == '19');
-console.log(19 === '19');
+// The default calling context is global
+function doSomethingWorthless () {
+    console.log('\nI am worthless');
+    console.log(this === global);
+}
+doSomethingWorthless();
+
