@@ -2,19 +2,22 @@
  * Created by chris on 2016/8/9.
  */
 
-var person = {
-    firstname: "Chris",
-    lastname: 'Yu',
-    age: 38
-};
+function placeAnOrder (orderNumber) {
+    console.log('Customer order:', orderNumber);
 
-console.log(person);
+    cookAndDeliverFood(function () {
+        console.log("Delivered food order:", orderNumber);
+    });
+}
 
-var printBacon = function () {
-    console.log('bacon is healthy, don\'t believe doctors.');
-};
+function cookAndDeliverFood(callback) {
+    setTimeout(callback, 5000);
+}
 
-printBacon();
-
-setTimeout(printBacon, 5000);
-
+// Simulate users web request
+placeAnOrder(1);
+placeAnOrder(2);
+placeAnOrder(3);
+placeAnOrder(4);
+placeAnOrder(5);
+placeAnOrder(6);
