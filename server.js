@@ -19,8 +19,6 @@ function forum(request, response) {
 app.use('/profile', profile);
 app.use('/forum', forum);
 
-
-
 http.createServer(app).listen(8888);
 console.log("Server is running...")
 
