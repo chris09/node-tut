@@ -2,31 +2,14 @@
  * Created by chris on 2016/8/9.
 */
 
-// var fs = require('fs');
-//
-// fs.writeFileSync("corn.txt", "Corn is good, corn is life.");
-// console.log(fs.readFileSync("corn.txt").toString());
-//
+var http = require('http');
 
-// var path = require('path');
-// var websiteHome = "/home/chris/IdeaProjects/node-tut/index.html";
-// var websiteAbout = "/home/chris/IdeaProjects/node-tut/about.html";
-// console.log('********************')
-// console.log(path.normalize(websiteHome));
-// console.log(path.dirname(websiteAbout));
-// console.log(path.basename(websiteAbout));
-// console.log(path.extname(websiteAbout));
+function onRequest(request, response) {
+    console.log("A user made a request" + request.url);
+    response.writeHead(200, {"Context-Type": "text/plain"});
+    response.write("Here is some data");
+    response.end();
+}
 
-/*
-setInterval(function () {
-    console.log('beef');
-}, 2000);
-
-setTimeout(function () {
-    console.log('banana');
-}, 2000);
-*/
-
-
-console.log(__dirname);
-console.log(__filename);
+http.createServer(onRequest).listen(8888);
+console.log("Server is now running...");
