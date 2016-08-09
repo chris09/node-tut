@@ -11,3 +11,5 @@ Node.js Tutorial for Beginners :
 9 - More on Modules
 10 - Shared State of Modules
 11 - Object Factory
+12 - Core Modules
+
