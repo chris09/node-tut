@@ -6,3 +6,4 @@ Node.js Tutorial for Beginners :
 4 - Handling Multiple Requests
 5 - Understanding References to Objects
 6 - this
+7 - Prototype
