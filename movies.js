@@ -1,6 +1,8 @@
 /**
  * Created by chris on 2016/8/9.
  */
-module.exports = {
-    favMovie: ""
+module.exports = function () {
+    return {
+        favMovie: ""
+    };
 };
